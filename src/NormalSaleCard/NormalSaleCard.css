@@ -1,0 +1,15 @@
+.cardContent {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+}
+
+.saleAmount {
+  padding-top: 16px;
+}
+
+.companyPic {
+  width: 150px;
+  height: 150px;
+  padding-right: 48px;
+}
