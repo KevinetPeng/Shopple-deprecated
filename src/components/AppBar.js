@@ -15,50 +15,51 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   title: {
-    marginRight: 12,
+    marginRight: 14,
     display: "block",
   },
   search: {
-    flex: 1,
-    position: "relative",
+    position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginLeft: 1,
-    marginRight: 100,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: 10,
-      marginRight: 100,
-      width: "auto"
-    }
+    width: '100%',
+    float: 'none',             
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    [theme.breakpoints.up('xs')]: {
+        width: 'auto',
+        float: 'none',             
+        marginLeft: 'auto',
+        marginRight: 'auto'
+    },
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   inputRoot: {
-    color: "inherit"
+    color: 'inherit',
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch"
-      }
-    }
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: 'auto',
+    },
+  },
+  accountButton: {
+      marginLeft: 'auto'
   }
 }));
 
@@ -102,7 +103,7 @@ export default function SearchAppBar() {
             />
           </div>
           {auth && (
-            <div>
+            <div className={classes.accountButton}>
               <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
@@ -127,8 +128,8 @@ export default function SearchAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Account</MenuItem>
+                <MenuItem onClick={handleClose}>Settings</MenuItem>
               </Menu>
             </div>
           )}
