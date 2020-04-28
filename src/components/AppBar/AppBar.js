@@ -70,13 +70,17 @@ export default function SearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const handleChange = event => {
-    setAuth(event.target.checked);
-  };
-
   const handleMenu = event => {
     setAnchorEl(event.currentTarget);
   };
+
+  const handleAccount = () => {
+    handleClose();
+  }
+
+  const handleSettings = () => {
+    handleClose();
+  }
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -128,8 +132,8 @@ export default function SearchAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Account</MenuItem>
-                <MenuItem onClick={handleClose}>Settings</MenuItem>
+                <MenuItem onClick={handleAccount}>Account</MenuItem>
+                <MenuItem onClick={handleSettings}>Settings</MenuItem>
               </Menu>
             </div>
           )}
