@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import NormalSaleCard from "./NormalSaleCard/NormalSaleCard";
+import NormalSaleCard from "./components/NormalSaleCard/NormalSaleCard";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
