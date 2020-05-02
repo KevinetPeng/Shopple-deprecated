@@ -1,3 +1,7 @@
+.MuiCard-root {
+  margin-bottom: 32px;
+}
+
 .cardContent {
   display: flex;
   flex-direction: row;
