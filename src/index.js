@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-import SaleCardContainer from "./components/SaleCardContainer/SaleCardContainer";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <SaleCardContainer sales={[1, 2, 3, 4, 5]} />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
