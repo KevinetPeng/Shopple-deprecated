@@ -4,6 +4,7 @@ import "./index.css";
 import NormalSaleCard from "./NormalSaleCard/NormalSaleCard";
 import AdvancedSearch from './components/AdvancedSearch/AdvancedSearch';
 import * as serviceWorker from "./serviceWorker";
+import SaleCardContainer from "./components/SaleCardContainer/SaleCardContainer";
 
 ReactDOM.render(
   <React.StrictMode>
