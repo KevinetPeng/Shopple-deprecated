@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import NormalSaleCard from "./NormalSaleCard/NormalSaleCard";
+import AdvancedSearch from './components/AdvancedSearch/AdvancedSearch';
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
@@ -12,6 +13,7 @@ ReactDOM.render(
       Support your community and broaden your horizons by trying different restaurants in your neighbourhood. Get inspired by the cuisines highlighted below, and experience flavours from around the world in the comfort of your home* with a $0 Delivery Fee on orders of $20 or more."
       saleAmount="20% Off"
     />
+    <AdvancedSearch/>
   </React.StrictMode>,
   document.getElementById("root")
 );
