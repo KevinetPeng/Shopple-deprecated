@@ -139,7 +139,7 @@ function AdvancedSearch(props) {
                             value={sortType}
                             onChange={handleChangeSortType}
                         >
-                            <MenuItem value={'Recent'}>Recent</MenuItem>
+                            <MenuItem value={'Newest Offers'}>Recently Added</MenuItem>
                             <MenuItem value={'Rating - High to Low'}>Rating - High to Low</MenuItem>
                             <MenuItem value={'Rating - Low to High'}>Rating - Low to High</MenuItem>
                             <MenuItem value={'Price - High to Low'}>Price - High to Low</MenuItem>
