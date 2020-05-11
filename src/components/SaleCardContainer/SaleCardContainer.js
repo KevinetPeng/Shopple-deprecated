@@ -1,8 +1,17 @@
 import React from "react";
 import NormalSaleCard from "../NormalSaleCard/NormalSaleCard";
 import "./SaleCardContainer.css";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+
+const useStyles = makeStyles({
+  root: {
+    paddingInlineStart: 0,
+    width: "fit-content",
+  },
+});
 
 function SaleCardContainer(props) {
+  const classes = useStyles();
   const sales = props.sales;
   const listItems = sales.map((element) => (
     <NormalSaleCard
@@ -12,7 +21,7 @@ function SaleCardContainer(props) {
       saleAmount="20% Off"
     />
   ));
-  return <ul className="sale-card-container">{listItems}</ul>;
+  return <ul className={classes.root}>{listItems}</ul>;
 }
 
 export default SaleCardContainer;
