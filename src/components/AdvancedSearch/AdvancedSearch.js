@@ -37,6 +37,7 @@ const useStyles = makeStyles({
   },
   expansionHeading: {
     fontSize: 16,
+    textAlign: "left",
   },
   subHeading: {
     fontSize: 13,
