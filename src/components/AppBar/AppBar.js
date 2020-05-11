@@ -19,8 +19,12 @@ const useStyles = makeStyles((theme) => ({
   },
   search: {
     position: "relative",
+    border: "1px solid #cbcbcb",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: fade("#cbcbcb", 0.1),
+    "&:hover": {
+      backgroundColor: fade("#cbcbcb", 0.2),
+    },
     width: "100%",
     float: "none",
     marginLeft: "auto",
@@ -47,6 +51,11 @@ const useStyles = makeStyles((theme) => ({
   },
   accountButton: {
     marginLeft: "auto",
+  },
+  appBar: {
+    backgroundColor: "#ffffff",
+    boxShadow: "none",
+    borderBottom: "1px solid #cbcbcb",
   },
 }));
 
@@ -75,7 +84,7 @@ export default function SearchAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             SalesApp

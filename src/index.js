@@ -7,6 +7,7 @@ import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import responsiveFontSizes from "@material-ui/core/styles/responsiveFontSizes";
 import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 
+//universal theme override for Material UI
 let theme = createMuiTheme({
   palette: {
     primary: { main: "#1de9b6" },
