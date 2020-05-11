@@ -1,6 +1,5 @@
 import React from "react";
 import NormalSaleCard from "../NormalSaleCard/NormalSaleCard";
-import "./SaleCardContainer.css";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 const useStyles = makeStyles({

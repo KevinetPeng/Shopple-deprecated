@@ -1,5 +1,16 @@
-.App {
-  text-align: center;
-  display: flex;
+.app {
+  display: inline-flex;
   flex-direction: row;
+}
+
+.app-parent {
+  text-align: center;
+}
+
+.space-left {
+  width: 32px;
+}
+
+.space-right {
+  width: 211px;
 }
