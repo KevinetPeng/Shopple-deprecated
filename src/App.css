@@ -1,25 +1,16 @@
-.App {
+.app {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.app-parent {
   text-align: center;
-  display: flex;
-  flex-direction: row;
-  margin-left: 155px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.space-left {
+  width: 32px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-.Advance-Search-Box {
-  margin-left: 72px;
+.space-right {
+  width: 211px;
 }

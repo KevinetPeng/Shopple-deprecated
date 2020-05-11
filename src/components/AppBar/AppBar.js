@@ -5,62 +5,52 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
-import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   title: {
     marginRight: 14,
     display: "block",
   },
   search: {
-    position: 'relative',
+    position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
+    "&:hover": {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    width: '100%',
-    float: 'none',             
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    [theme.breakpoints.up('xs')]: {
-        width: 'auto',
-        float: 'none',             
-        marginLeft: 'auto',
-        marginRight: 'auto'
+    width: "100%",
+    float: "none",
+    marginLeft: "auto",
+    marginRight: "auto",
+    [theme.breakpoints.up("xs")]: {
+      width: "auto",
+      float: "none",
+      marginLeft: "auto",
+      marginRight: "auto",
     },
   },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   inputRoot: {
-    color: 'inherit',
+    color: "inherit",
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 'auto',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "auto",
     },
   },
   accountButton: {
-      marginLeft: 'auto'
-  }
+    marginLeft: "auto",
+  },
 }));
 
 export default function SearchAppBar() {
@@ -70,17 +60,17 @@ export default function SearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const handleMenu = event => {
+  const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleAccount = () => {
     handleClose();
-  }
+  };
 
   const handleSettings = () => {
     handleClose();
-  }
+  };
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -94,14 +84,11 @@ export default function SearchAppBar() {
             SalesApp
           </Typography>
           <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search"
               classes={{
                 root: classes.inputRoot,
-                input: classes.inputInput
+                input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
             />
@@ -122,12 +109,12 @@ export default function SearchAppBar() {
                 anchorEl={anchorEl}
                 anchorOrigin={{
                   vertical: "top",
-                  horizontal: "right"
+                  horizontal: "right",
                 }}
                 keepMounted
                 transformOrigin={{
                   vertical: "top",
-                  horizontal: "right"
+                  horizontal: "right",
                 }}
                 open={open}
                 onClose={handleClose}
