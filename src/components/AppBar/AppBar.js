@@ -91,7 +91,7 @@ export default function SearchAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            SalesApp
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

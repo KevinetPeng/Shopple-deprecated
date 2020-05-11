@@ -17,15 +17,10 @@ function NormalSaleCard(props) {
           <Typography variant="h5" color="primary" gutterBottom>
             {props.companyName}
           </Typography>
-          <Typography variant="body" color="textSecondary" gutterBottom>
+          <Typography variant="body2" color="textSecondary" gutterBottom>
             {props.saleDescript}
           </Typography>
-          <Typography
-            className="saleAmount"
-            variant="h6"
-            color="textSecondary"
-            gutterBottom
-          >
+          <Typography className="saleAmount" color="textSecondary" gutterBottom>
             {props.saleAmount}
           </Typography>
         </div>
