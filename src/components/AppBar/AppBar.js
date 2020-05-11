@@ -4,7 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
-import { makeStyles } from "@material-ui/core/styles";
+import { fade, makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   title: {
-    marginRight: 14,
+    marginRight: "auto",
     display: "block",
   },
   search: {
@@ -27,8 +27,6 @@ const useStyles = makeStyles((theme) => ({
     },
     width: "100%",
     float: "none",
-    marginLeft: "auto",
-    marginRight: "auto",
     [theme.breakpoints.up("xs")]: {
       width: "auto",
       float: "none",

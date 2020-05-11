@@ -24,11 +24,11 @@ const useStyles = makeStyles({
     paddingBottom: 12,
     paddingLeft: 10,
     paddingRight: 10,
-    backgroundColor: "background.paper",
+    backgroundColor: "#ffffff",
     borderRadius: 4,
     marginTop: 16,
     border: "1px solid #DDE3E6",
-    boxShadow: "1px 1px 2px  rgba(150, 150, 250, 0.15)",
+    boxShadow: "1px 1px 2px  rgba(150, 150, 150, 0.15)",
   },
   title: {
     fontSize: 20,
