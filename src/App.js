@@ -16,11 +16,15 @@ function App(props) {
   return (
     <div>
       <AppBar />
-      <div className="App">
-        <AdvancedSearch />
-        <SaleCardContainer sales={[1, 2, 3, 4, 5]} />
-        <AddSale />
+      <div className="app-parent">
+        <div className="app">
+          <AdvancedSearch />
+          <div className="space-left" />
+          <SaleCardContainer sales={[1, 2, 3, 4, 5]} />
+          <div className="space-right" />
+        </div>
         <ToggleView parentCallback={toggleViewCallback} />
+        <AddSale />
       </div>
     </div>
   );
