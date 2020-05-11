@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     paddingLeft: 10,
     paddingRight: 10,
     marginTop: 16,
-    marginLeft: 1,
+    marginLeft: 60,
     backgroundColor: "background.paper",
     borderRadius: 4,
     border: "1px solid #DDE3E6",
