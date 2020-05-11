@@ -19,6 +19,7 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 const useStyles = makeStyles({
   box: {
     width: 200,
+    height: 150,
     paddingTop: 12,
     paddingBottom: 12,
     paddingLeft: 10,

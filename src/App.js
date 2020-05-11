@@ -21,9 +21,10 @@ function App(props) {
           <AdvancedSearch />
           <div className="space-left" />
           <SaleCardContainer sales={[1, 2, 3, 4, 5]} />
+          <div className="space-left" />
+          <ToggleView parentCallback={toggleViewCallback} />
           <div className="space-right" />
         </div>
-        <ToggleView parentCallback={toggleViewCallback} />
         <AddSale />
       </div>
     </div>

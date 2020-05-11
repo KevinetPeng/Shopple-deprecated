@@ -8,6 +8,13 @@ methods. Code consistency was sacrificed in this instance for the sake of learni
 import React from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
+import withStyles from "@material-ui/core/styles/withStyles";
+
+const styles = (theme) => ({
+  root: {
+    paddingTop: 16,
+  },
+});
 
 class ToggleView extends React.Component {
   constructor(props) {
@@ -45,8 +52,9 @@ class ToggleView extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
     return (
-      <div>
+      <div className={classes.root}>
         <FormControlLabel
           control={
             <Switch
@@ -63,4 +71,4 @@ class ToggleView extends React.Component {
   }
 }
 
-export default ToggleView;
+export default withStyles(styles)(ToggleView);
