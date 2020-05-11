@@ -5,6 +5,7 @@
 
 .app-parent {
   text-align: center;
+  background-color: #fbfbfb;
 }
 
 .space-left {
@@ -12,5 +13,5 @@
 }
 
 .space-right {
-  width: 211px;
+  width: 82.156px;
 }

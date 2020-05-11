@@ -14,20 +14,19 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   title: {
-    marginRight: 14,
+    marginRight: "auto",
     display: "block",
   },
   search: {
     position: "relative",
+    border: "1px solid #cbcbcb",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: fade("#cbcbcb", 0.1),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      backgroundColor: fade("#cbcbcb", 0.2),
     },
     width: "100%",
     float: "none",
-    marginLeft: "auto",
-    marginRight: "auto",
     [theme.breakpoints.up("xs")]: {
       width: "auto",
       float: "none",
@@ -41,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    paddingLeft: `calc(1em + ${theme.spacing(1)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("md")]: {
@@ -50,6 +49,11 @@ const useStyles = makeStyles((theme) => ({
   },
   accountButton: {
     marginLeft: "auto",
+  },
+  appBar: {
+    backgroundColor: "#ffffff",
+    boxShadow: "none",
+    borderBottom: "1px solid #cbcbcb",
   },
 }));
 
@@ -78,7 +82,7 @@ export default function SearchAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
             SalesApp
