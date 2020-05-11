@@ -3,8 +3,16 @@ import "./App.css";
 import AppBar from "./components/AppBar/AppBar";
 import SaleCardContainer from "./components/SaleCardContainer/SaleCardContainer";
 import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch";
+import AddSale from "./components/AddSale/AddSale";
+import ToggleView from "./components/ToggleView/ToggleView";
 
-function App() {
+function App(props) {
+  const [showListView, setShowListView] = React.useState(true);
+
+  const toggleViewCallback = (childListViewState) => {
+    setShowListView(childListViewState);
+  };
+
   return (
     <div>
       <AppBar />
@@ -15,6 +23,8 @@ function App() {
           <SaleCardContainer sales={[1, 2, 3, 4, 5]} />
           <div className="space-right" />
         </div>
+        <ToggleView parentCallback={toggleViewCallback} />
+        <AddSale />
       </div>
     </div>
   );

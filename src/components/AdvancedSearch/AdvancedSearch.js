@@ -18,7 +18,6 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 
 const useStyles = makeStyles({
   box: {
-    height: 150,
     width: 200,
     paddingTop: 12,
     paddingBottom: 12,
@@ -97,7 +96,7 @@ function AdvancedSearch(props) {
   const [companyFilter, setCompanyFilter] = React.useState(companyObjectTrue);
 
   //useState for sort type from selection dropdown... ex. 'Recent', 'Rating - High to Low, etc.
-  const [sortType, setSortType] = React.useState("Recent");
+  const [sortType, setSortType] = React.useState("Recently Added");
 
   //handle functions START
   //change handler for sortType: sets the sortType state to the MenuItem value selected
@@ -155,7 +154,7 @@ function AdvancedSearch(props) {
             value={sortType}
             onChange={handleChangeSortType}
           >
-            <MenuItem value={"Recent"}>Recent</MenuItem>
+            <MenuItem value={"Recently Added"}>Recently Added</MenuItem>
             <MenuItem value={"Rating - High to Low"}>
               Rating - High to Low
             </MenuItem>
