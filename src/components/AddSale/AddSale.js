@@ -8,6 +8,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import TextField from "@material-ui/core/TextField";
 
 const styles = makeStyles({
   addButton: {
@@ -15,6 +16,10 @@ const styles = makeStyles({
     position: "fixed",
     bottom: 30,
     right: 30,
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
   },
 });
 
@@ -64,6 +69,11 @@ function AddSale(props) {
           </DialogContentText>
           {/* This is where the text fields and labels would go for adding sale information.
                     Note that text output would need to be routed to backend and into DB */}
+          <form className={classes.form}>
+            <TextField label="Company Name" />
+            <TextField label="Sale Description" multiline />
+            <TextField label="Sale Amount" type="number" />
+          </form>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleDialogClose} color="primary">
