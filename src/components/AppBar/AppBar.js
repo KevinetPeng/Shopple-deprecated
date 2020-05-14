@@ -85,7 +85,7 @@ export default function SearchAppBar() {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            SalesApp
+            Shopple
           </Typography>
           <div className={classes.search}>
             <InputBase
