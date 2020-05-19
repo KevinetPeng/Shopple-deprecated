@@ -46,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("md")]: {
       width: "auto",
     },
+    "&:focus": {
+      backgroundColor: fade("#cbcbcb", 0.1),
+    },
   },
   accountButton: {
     marginLeft: "auto",
