@@ -67,6 +67,9 @@ const useStyles = makeStyles({
   buttonGroup: {
     margin: "auto",
   },
+  checkLabel: {
+    textAlign: "left",
+  },
 });
 
 function AdvancedSearch(props) {
@@ -129,11 +132,13 @@ function AdvancedSearch(props) {
     return (
       <FormGroup row>
         <FormControlLabel
+          className={classes.checkLabel}
           control={
             <Checkbox
               checked={companyFilter[company]}
               onChange={handleChangeCompanyFilter}
               name={company}
+              color="primary"
             />
           }
           label={company}
