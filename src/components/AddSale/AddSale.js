@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, styled } from "@material-ui/core";
 import Fab from "@material-ui/core/Fab";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
@@ -21,6 +21,10 @@ const styles = makeStyles({
     display: "flex",
     flexDirection: "column",
   },
+});
+
+const FormTextField = styled(TextField)({
+  padding: "8px 0",
 });
 
 function AddSale(props) {
@@ -67,12 +71,10 @@ function AddSale(props) {
             If you know of an ongoing sale but don't see it in our catalog, you
             can add it here.
           </DialogContentText>
-          {/* This is where the text fields and labels would go for adding sale information.
-                    Note that text output would need to be routed to backend and into DB */}
           <form className={classes.form}>
-            <TextField label="Company Name" />
-            <TextField label="Sale Description" multiline />
-            <TextField label="Sale Amount" type="number" />
+            <FormTextField label="Company Name" />
+            <FormTextField label="Sale Description" multiline />
+            <FormTextField label="Sale Amount" type="number" />
           </form>
         </DialogContent>
         <DialogActions>
