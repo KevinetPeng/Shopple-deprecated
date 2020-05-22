@@ -25,7 +25,7 @@ function App(props) {
           <div className="space-left" />
           {!showListView && (
             <Fade in={!showListView} timeout={2000}>
-              <SaleCardContainer sales={[1, 2, 3, 4, 5]}>
+              <SaleCardContainer sales={[1, 2, 3, 4, 5, 6, 7, 8, 9]}>
                 <NormalSaleCard />
               </SaleCardContainer>
             </Fade>
