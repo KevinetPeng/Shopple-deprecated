@@ -130,7 +130,7 @@ function AdvancedSearch(props) {
   //Create JSX elements in a companyFilterList array to insert into the React return statement for the filter list part of the component
   const companyFilterList = companyList.map((company) => {
     return (
-      <FormGroup row>
+      <FormGroup row key={company}>
         <FormControlLabel
           className={classes.checkLabel}
           control={

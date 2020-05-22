@@ -8,7 +8,7 @@ const useStyles = makeStyles({
   root: {
     marginBottom: 4,
     width: 846,
-    height: 40,
+    height: 42,
     borderRadius: 4,
     border: "1px solid #DDE3E6",
     boxShadow: "1px 1px 2px  rgba(150, 150, 250, 0.15)",
@@ -29,6 +29,7 @@ const useStyles = makeStyles({
   },
   companyName: {
     justifySelf: "left",
+    color: "#222222",
   },
   mainText: {
     textAlign: "left",
@@ -46,8 +47,7 @@ function ThinSaleCard(props) {
       />
       <div className={classes.mainText}>
         <Typography
-          variant="h7"
-          color="primary"
+          variant="subtitle2"
           align="left"
           className={classes.companyName}
         >
@@ -66,7 +66,7 @@ function ThinSaleCard(props) {
       <Typography
         className={classes.saleAmount}
         variant="body2"
-        color="Secondary"
+        color="secondary"
         align="left"
         gutterBottom
       >
