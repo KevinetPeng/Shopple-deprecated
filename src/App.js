@@ -24,14 +24,14 @@ function App(props) {
           <AdvancedSearch />
           <div className="space-left" />
           {!showListView && (
-            <Fade in={!showListView} timeout={2000}>
+            <Fade in={!showListView} timeout={500}>
               <SaleCardContainer sales={[1, 2, 3, 4, 5]}>
                 <NormalSaleCard />
               </SaleCardContainer>
             </Fade>
           )}
           {showListView && (
-            <Fade in={showListView} timeout={2000}>
+            <Fade in={showListView} timeout={500}>
               <SaleCardContainer
                 sales={[
                   1,
