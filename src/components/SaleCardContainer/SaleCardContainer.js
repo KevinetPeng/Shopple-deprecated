@@ -23,7 +23,11 @@ function SaleCardContainer(props) {
       saleAmount="20% Off"
     />
   ));
-  return <ul className={classes.root}>{listItems}</ul>;
+  return (
+    <ul {...props} className={classes.root}>
+      {listItems}
+    </ul>
+  );
 }
 
 export default SaleCardContainer;
