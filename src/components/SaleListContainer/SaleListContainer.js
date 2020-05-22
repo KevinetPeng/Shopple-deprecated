@@ -2,6 +2,8 @@ import React from "react";
 import ThinSaleCard from "../ThinSaleCard/ThinSaleCard";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
+// Deprecated, functionality has been refactored to SaleCardContainer
+
 const useStyles = makeStyles({
   root: {
     paddingInlineStart: 0,

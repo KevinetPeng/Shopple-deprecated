@@ -5,8 +5,9 @@ import SaleCardContainer from "./components/SaleCardContainer/SaleCardContainer"
 import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch";
 import AddSale from "./components/AddSale/AddSale";
 import ToggleView from "./components/ToggleView/ToggleView";
-import SaleListContainer from "./components/SaleListContainer/SaleListContainer";
 import Fade from "@material-ui/core/Fade";
+import NormalSaleCard from "./components/NormalSaleCard/NormalSaleCard";
+import ThinSaleCard from "./components/ThinSaleCard/ThinSaleCard";
 
 function App(props) {
   const [showListView, setShowListView] = React.useState(true);
@@ -24,12 +25,14 @@ function App(props) {
           <div className="space-left" />
           {!showListView && (
             <Fade in={!showListView} timeout={2000}>
-              <SaleCardContainer sales={[1, 2, 3, 4, 5]} />
+              <SaleCardContainer sales={[1, 2, 3, 4, 5]}>
+                <NormalSaleCard />
+              </SaleCardContainer>
             </Fade>
           )}
           {showListView && (
             <Fade in={showListView} timeout={2000}>
-              <SaleListContainer
+              <SaleCardContainer
                 sales={[
                   1,
                   2,
@@ -48,7 +51,9 @@ function App(props) {
                   1,
                   1,
                 ]}
-              />
+              >
+                <ThinSaleCard />
+              </SaleCardContainer>
             </Fade>
           )}
           <div className="space-left" />
