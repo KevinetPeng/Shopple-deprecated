@@ -25,7 +25,7 @@ function App(props) {
           <div className="space-left" />
           {!showListView && (
             <Fade in={!showListView} timeout={500}>
-              <SaleCardContainer sales={[1, 2, 3, 4, 5]}>
+              <SaleCardContainer sales={[1, 2, 3, 4, 5]} key="NormalView">
                 <NormalSaleCard />
               </SaleCardContainer>
             </Fade>
@@ -43,14 +43,15 @@ function App(props) {
                   "cool",
                   true,
                   7,
-                  1,
-                  1,
-                  1,
-                  1,
-                  1,
-                  1,
-                  1,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
                 ]}
+                key="ThinView"
               >
                 <ThinSaleCard />
               </SaleCardContainer>
