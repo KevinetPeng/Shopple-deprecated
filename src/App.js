@@ -17,7 +17,7 @@ function App(props) {
   };
 
   return (
-    <div>
+    <>
       <AppBar />
       <div className="app-parent">
         <div className="app">
@@ -62,7 +62,7 @@ function App(props) {
         </div>
         <AddSale />
       </div>
-    </div>
+    </>
   );
 }
 

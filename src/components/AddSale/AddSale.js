@@ -51,7 +51,7 @@ function AddSale(props) {
   };
 
   return (
-    <div>
+    <>
       <Fab
         aria-label="addSale"
         onClick={handleClick}
@@ -86,7 +86,7 @@ function AddSale(props) {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 }
 
