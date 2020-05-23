@@ -6,7 +6,8 @@ const useStyles = makeStyles({
     paddingInlineStart: 0,
     width: "fit-content",
     height: "89vh",
-    overflow: "auto",
+    overflowY: "auto",
+    overflowX: "hidden",
     paddingRight: 16,
   },
 });
