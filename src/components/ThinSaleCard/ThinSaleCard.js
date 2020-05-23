@@ -29,7 +29,7 @@ const useStyles = makeStyles({
   },
   companyName: {
     justifySelf: "left",
-    color: "#222222",
+    color: "#444444",
   },
   mainText: {
     textAlign: "left",

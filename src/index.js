@@ -5,12 +5,12 @@ import * as serviceWorker from "./serviceWorker";
 import App from "./App";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import responsiveFontSizes from "@material-ui/core/styles/responsiveFontSizes";
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 
 //universal theme override for Material UI
 let theme = createMuiTheme({
   palette: {
-    primary: { main: "#1de9b6" },
+    primary: { main: "#01579b" },
     secondary: { main: "#ffe0b2" },
   },
 });

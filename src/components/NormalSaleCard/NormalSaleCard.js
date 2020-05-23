@@ -22,6 +22,9 @@ const useStyles = makeStyles({
     width: 270,
     marginRight: 30,
   },
+  companyName: {
+    color: "#444444",
+  },
 });
 
 function NormalSaleCard(props) {
@@ -34,7 +37,13 @@ function NormalSaleCard(props) {
         title="H&M"
       />
       <div>
-        <Typography variant="h5" color="primary" align="left" gutterBottom>
+        <Typography
+          className={classes.companyName}
+          variant="h5"
+          color="primary"
+          align="left"
+          gutterBottom
+        >
           {props.companyName}
         </Typography>
         <Typography

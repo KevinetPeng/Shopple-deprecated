@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginRight: "auto",
     display: "block",
+    color: "#111111",
   },
   search: {
     position: "relative",
@@ -49,9 +50,11 @@ const useStyles = makeStyles((theme) => ({
     "&:focus": {
       backgroundColor: fade("#cbcbcb", 0.1),
     },
+    color: "#000000",
   },
   accountButton: {
     marginLeft: "auto",
+    color: "#333333",
   },
   appBar: {
     backgroundColor: "#ffffff",
