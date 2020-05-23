@@ -17,21 +17,21 @@ function App(props) {
   };
 
   return (
-    <div>
+    <>
       <AppBar />
       <div className="app-parent">
         <div className="app">
           <AdvancedSearch />
           <div className="space-left" />
           {!showListView && (
-            <Fade in={!showListView} timeout={2000}>
-              <SaleCardContainer sales={[1, 2, 3, 4, 5, 6, 7, 8, 9]}>
+            <Fade in={!showListView} timeout={500}>
+              <SaleCardContainer sales={[1, 2, 3, 4, 5]} key="NormalView">
                 <NormalSaleCard />
               </SaleCardContainer>
             </Fade>
           )}
           {showListView && (
-            <Fade in={showListView} timeout={2000}>
+            <Fade in={showListView} timeout={500}>
               <SaleCardContainer
                 sales={[
                   1,
@@ -43,14 +43,15 @@ function App(props) {
                   "cool",
                   true,
                   7,
-                  1,
-                  1,
-                  1,
-                  1,
-                  1,
-                  1,
-                  1,
+                  8,
+                  9,
+                  10,
+                  11,
+                  12,
+                  13,
+                  14,
                 ]}
+                key="ThinView"
               >
                 <ThinSaleCard />
               </SaleCardContainer>
@@ -62,7 +63,7 @@ function App(props) {
         </div>
         <AddSale />
       </div>
-    </div>
+    </>
   );
 }
 
