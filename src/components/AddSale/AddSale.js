@@ -68,8 +68,8 @@ function AddSale(props) {
         <DialogTitle>Add Sale</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            If you know of an ongoing sale but don't see it in our catalog, you
-            can add it here.
+            Don't see an ongoing sale in our catalog and wanna share it? Add
+            here!
           </DialogContentText>
           <form className={classes.form}>
             <FormTextField label="Company Name" />
