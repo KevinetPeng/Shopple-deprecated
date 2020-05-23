@@ -5,7 +5,7 @@ const useStyles = makeStyles({
   root: {
     paddingInlineStart: 0,
     width: "fit-content",
-    height: 838,
+    height: "89vh",
     overflow: "auto",
     paddingRight: 16,
   },
