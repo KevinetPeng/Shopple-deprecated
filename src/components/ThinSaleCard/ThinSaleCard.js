@@ -15,6 +15,11 @@ const useStyles = makeStyles({
     padding: "4px 8px 4px 0px",
     display: "flex",
     flexDirection: "row",
+    "&:hover": {
+      boxShadow: "1px 1px 2px  rgba(150, 150, 250, 0.35)",
+      border: "1px solid #b8b8b8",
+    },
+    cursor: "pointer",
   },
   companyPic: {
     width: 200,
