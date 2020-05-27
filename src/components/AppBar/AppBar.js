@@ -8,6 +8,7 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,16 +42,13 @@ const useStyles = makeStyles((theme) => ({
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(1)}px)`,
     transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "auto",
-    },
+    width: "400px",
     "&:focus": {
       backgroundColor: fade("#cbcbcb", 0.1),
     },
     color: "#000000",
+    textAlign: "center",
   },
   accountButton: {
     marginLeft: "auto",
