@@ -10,6 +10,8 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import TextField from "@material-ui/core/TextField";
 
+// This component is the floating action button in charge of the add sale functionality.
+
 const styles = makeStyles({
   addButton: {
     margin: "2px 2px 2px 2px",
