@@ -1,17 +1,24 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
-const PORT = 4000;
 const mongoose = require("mongoose");
-app.use(cors());
 
-mongoose.connect(
-  "mongodb+srv://jay:!HOz8o7Hkx4N@shopple-8dmxr.mongodb.net/test",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+const app = express();
+
+//PORT stored in .env
+const PORT = process.env.PORT || 4000;
+
+app.use(cors());
+//Allow passing of json files
+app.use(express.json());
+
+//uri stored in .env
+const uri = process.env.ATLAS_URI;
+
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
 
 const connection = mongoose.connection;
 
