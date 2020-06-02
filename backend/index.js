@@ -15,6 +15,7 @@ app.use(express.json());
 //uri stored in .env
 const uri = process.env.ATLAS_URI;
 
+//connect with uri
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -27,6 +28,13 @@ connection.once("open", function () {
   console.log("Connection with MongoDB was successful");
 });
 
+//require route for sales
+const salesRouter = require("./routes/sales");
+
+//use route for sales at .../sales
+app.use("/sales", salesRouter);
+
+//listen on specified port, and log port
 app.listen(PORT, function () {
   console.log("Server is running on Port: " + PORT);
 });
