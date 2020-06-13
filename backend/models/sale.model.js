@@ -1,3 +1,5 @@
+// The sale model using mongdb
+
 const mongoose = require("mongoose");
 const companyModel = require("./company.model");
 
