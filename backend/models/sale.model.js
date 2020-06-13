@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 
 const saleSchema = new Schema(
   {
-    company: {
-      type: String,
+    company_id: {
+      type: Number,
       required: true,
     },
     amount: {
