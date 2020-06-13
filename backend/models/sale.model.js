@@ -1,16 +1,18 @@
 const mongoose = require("mongoose");
+const companyModel = require("./company.model");
 
 const Schema = mongoose.Schema;
 
 const saleSchema = new Schema(
   {
     company: {
-      type: String,
+      type: companyModel.schema,
       required: true,
     },
     amount: {
       type: Number,
       required: false,
+      min: 0,
     },
     description: {
       type: String,
