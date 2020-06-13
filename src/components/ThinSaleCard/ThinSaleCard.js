@@ -26,8 +26,7 @@ const useStyles = makeStyles({
     marginRight: 0,
   },
   saleDescript: {
-    overflow: "hidden",
-    textOverflow: "ellipsis",
+    display: "block",
   },
   saleAmount: {
     marginLeft: 8,
@@ -38,6 +37,7 @@ const useStyles = makeStyles({
   },
   mainText: {
     textAlign: "left",
+    overflow: "hidden",
   },
 });
 
