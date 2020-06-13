@@ -12,6 +12,7 @@ const saleSchema = new Schema(
     amount: {
       type: Number,
       required: false,
+      min: 0,
     },
     description: {
       type: String,

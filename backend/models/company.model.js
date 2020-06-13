@@ -11,6 +11,7 @@ const companySchema = new Schema(
     },
     sales: {
       type: [saleModel.schema],
+      required: false,
     },
   },
   {
