@@ -13,7 +13,7 @@ router.route("/").get((request, response) => {
 
 //POST request to add sale
 router.route("/add").post((request, response) => {
-  const company = request.body.company;
+  const company = { companyName: request.body.company };
   const amount = Number(request.body.amount);
   const description = request.body.description;
   const endDate = Date.parse(request.body.endDate);
@@ -56,7 +56,7 @@ router.route("/:id").delete((request, response) => {
 router.route("/update/:id").post((request, response) => {
   Sale.findById(request.params.id)
     .then((sale) => {
-      sale.company = request.body.company;
+      sale.company = { companyName: request.body.company };
       sale.amount = Number(request.body.amount);
       sale.description = request.body.description;
       sale.endDate = Date.parse(request.body.endDate);
