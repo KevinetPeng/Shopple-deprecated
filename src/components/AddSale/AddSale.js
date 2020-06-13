@@ -24,7 +24,7 @@ const styles = makeStyles({
 });
 
 const FormTextField = styled(TextField)({
-  padding: "8px 0",
+  padding: "12px 0",
 });
 
 function AddSale(props) {
@@ -74,7 +74,16 @@ function AddSale(props) {
           <form className={classes.form}>
             <FormTextField label="Company Name" />
             <FormTextField label="Sale Description" multiline />
-            <FormTextField label="Sale Amount" type="number" />
+            <FormTextField
+              label="Sale Amount"
+              type="number"
+              InputProps={{
+                inputProps: {
+                  max: 100,
+                  min: 0,
+                },
+              }}
+            />
           </form>
         </DialogContent>
         <DialogActions>
