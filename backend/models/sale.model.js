@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
+const companyModel = require("./company.model");
 
 const Schema = mongoose.Schema;
 
 const saleSchema = new Schema(
   {
-    company_id: {
-      type: Number,
+    company: {
+      type: companyModel.schema,
       required: true,
     },
     amount: {
