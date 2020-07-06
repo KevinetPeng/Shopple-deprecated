@@ -8,9 +8,9 @@ const app = express();
 //PORT stored in .env
 const PORT = process.env.PORT || 4000;
 
+//Express middleware
 app.use(cors());
-//Allow passing of json files
-app.use(express.json());
+app.use(express.json()); //Allow passing of json files
 
 //uri stored in .env
 const uri = process.env.ATLAS_URI;
@@ -28,13 +28,13 @@ connection.once("open", function () {
   console.log("Connection with MongoDB was successful");
 });
 
-//require route for sales
-const salesRouter = require("./routes/sales");
+//require router
+const router = require("./routes/router");
 
-//use route for sales at .../sales
-app.use("/sales", salesRouter);
+//use routes in router at home url
+app.use("/", router);
 
-//listen on specified port, and log port
+//listen on specified port, and console log port number
 app.listen(PORT, function () {
   console.log("Server is running on Port: " + PORT);
 });
