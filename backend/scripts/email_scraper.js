@@ -13,7 +13,7 @@ const TOKEN_PATH = "token.json";
 fs.readFile("../credentials.json", (err, content) => {
   if (err) return console.log("Error loading client secret file:", err);
   // Authorize a client with credentials, then call the Gmail API.
-  authorize(JSON.parse(content), listLabels);
+  authorize(JSON.parse(content), addNewSale);
 });
 
 /**
@@ -100,20 +100,22 @@ function listLabels(auth) {
  */
 function addNewSale(auth) {
   const gmail = google.gmail({ version: "v1", auth });
-  gmail.users.labels.list(
+  gmail.users.messages.list(
     {
       userId: "me",
     },
     (err, res) => {
-      if (err) return console.log("The API returned an error: " + err);
-      const labels = res.data.labels;
-      if (labels.length) {
-        console.log("Labels:");
-        labels.forEach((label) => {
-          console.log(`- ${label.name}`);
-        });
-      } else {
-        console.log("No labels found.");
+      for (message of res.data.messages) {
+        const request = gmail.users.messages.get(
+          { userId: "me", id: message.id },
+          (err, res) => {
+            for (header of res.data.payload.headers) {
+              if (header.name === "Subject") {
+                console.log(header.value);
+              }
+            }
+          }
+        );
       }
     }
   );

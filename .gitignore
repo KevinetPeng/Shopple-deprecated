@@ -26,3 +26,4 @@ yarn-error.log*
 # environment variables
 /backend/.env
 /backend/credentials.json
+/backend/scripts/token.json
