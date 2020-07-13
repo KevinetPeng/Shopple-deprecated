@@ -111,7 +111,19 @@ function addNewSale(auth) {
           (err, res) => {
             for (header of res.data.payload.headers) {
               if (header.name === "Subject") {
-                console.log(header.value);
+                let parsedString = header.value.split(" ");
+                let discountString = "";
+                for (string of parsedString) {
+                  if (string.includes("%")) {
+                    discountString = string;
+                    break;
+                  }
+                }
+                console.log(discountString);
+              } else if (header.name === "From") {
+                let email = header.value.split("<");
+                email = email[1].substring(0, email[1].length - 1);
+                console.log(email);
               }
             }
           }
