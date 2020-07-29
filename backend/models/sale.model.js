@@ -20,8 +20,8 @@ const saleSchema = new Schema(
       required: true,
     },
     company: {
-      type: Schema.Types.ObjectId,
-      ref: "Company",
+      type: String,
+      required: true,
     },
   },
   {

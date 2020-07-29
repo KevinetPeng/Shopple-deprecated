@@ -16,11 +16,14 @@ app.use(express.json()); //Allow passing of json files
 const uri = process.env.ATLAS_URI;
 
 //connect with uri
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  "mongodb+srv://jay:!HOz8o7Hkx4N@shopple-8dmxr.mongodb.net/shopple",
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  }
+);
 
 const connection = mongoose.connection;
 
@@ -29,7 +32,7 @@ connection.once("open", function () {
 });
 
 //require router
-const router = require("./routes/router");
+const router = require("./routes/router.js");
 
 //use routes in router at home url
 app.use("/", router);

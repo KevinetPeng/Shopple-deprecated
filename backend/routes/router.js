@@ -1,15 +1,16 @@
 const router = require("express").Router(); //require express router
 
-const companyController = require("../express_controllers/CompanyController.js");
-const saleController = require("../express_controllers/SaleController");
+const Controller = require("../express_controllers/Controller.js");
 
-router.get("/companies", companyController.companyListAll);
-router.post("/companies", companyController.companyCreate);
-router.get("/companies/:companyName", companyController.companyFindByName);
-router.get("/companies/:companyName/sales", companyController.getAllSales);
+router.get("/companies", Controller.companyListAll);
+router.post("/companies", Controller.companyCreate);
+router.get("/companies/:companyName", Controller.companyFindByName);
+router.get("/companies/:companyName/sales", Controller.getAllSales);
 
-router.get("/sales", saleController.saleListAll);
-router.post("/companies/:companyName/sales", saleController.saleCreate);
+router.get("/sales", Controller.saleListAll);
+router.post("/companies/:companyName/sales", Controller.saleCreate);
+
+module.exports = router;
 // //If GET request on .../sales/, then respond with sales in JSON format
 // //If there is an error, respond with error 400 and error message
 // //find method is a mongoose method that returns a promise
