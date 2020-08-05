@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const saleModel = require("./sale.model");
 
 const Schema = mongoose.Schema;
 
@@ -9,10 +8,12 @@ const companySchema = new Schema(
       type: String,
       required: true,
     },
-    sales: {
-      type: [saleModel.schema],
-      required: false,
-    },
+    sales: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Sale",
+      },
+    ],
   },
   {
     timestamps: true,
