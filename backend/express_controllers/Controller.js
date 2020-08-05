@@ -45,23 +45,21 @@ exports.saleCreate = (req, res) => {
   const endDate = Date.parse(req.body.endDate);
   const company = req.params.companyName;
 
-  const newSale = new SaleModel({
-    amount,
-    description,
-    endDate,
-    company,
-  });
+  const newSale = {
+    amount: amount,
+    description: description,
+    endDate: endDate,
+    company: company,
+  };
 
-  newSale
-    .save()
-    .then((sale) => {
-      console.log(newSale["_id"]);
-      return CompanyModel.findOneAndUpdate(
-        { companyName: req.params.companyName },
-        { $push: { sales: sale._id.str } },
+  SaleModel.create(newSale)
+    .then((sale) =>
+      CompanyModel.findOneAndUpdate(
+        { companyName: company },
+        { $push: { sales: sale._id } },
         { new: true }
-      );
-    })
-    .then(() => res.json("Sale added."))
-    .catch((err) => res.status(400).json("Error: " + err));
+      )
+    )
+    .then((company) => res.json(company))
+    .catch((error) => res.json(error));
 };
