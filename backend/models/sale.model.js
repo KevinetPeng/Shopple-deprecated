@@ -1,16 +1,11 @@
 // The sale model using mongdb
 
 const mongoose = require("mongoose");
-const companyModel = require("./company.model");
 
 const Schema = mongoose.Schema;
 
 const saleSchema = new Schema(
   {
-    company: {
-      type: companyModel.schema,
-      required: true,
-    },
     amount: {
       type: Number,
       required: false,
@@ -22,6 +17,10 @@ const saleSchema = new Schema(
     },
     endDate: {
       type: Date,
+      required: true,
+    },
+    company: {
+      type: String,
       required: true,
     },
   },
