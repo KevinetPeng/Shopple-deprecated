@@ -8,9 +8,18 @@ import ToggleView from "./components/ToggleView/ToggleView";
 import Fade from "@material-ui/core/Fade";
 import NormalSaleCard from "./components/NormalSaleCard/NormalSaleCard";
 import ThinSaleCard from "./components/ThinSaleCard/ThinSaleCard";
+import Axios from "axios";
 
 function App(props) {
   const [showListView, setShowListView] = React.useState(true);
+  const [saleList, setSaleList] = React.useState([]);
+
+  React.useEffect(() => {
+    Axios.get(`http://localhost:4000/sales`).then((response) => {
+      setSaleList(response.data);
+      console.log(saleList);
+    });
+  });
 
   const toggleViewCallback = (childListViewState) => {
     setShowListView(childListViewState);
@@ -25,34 +34,14 @@ function App(props) {
           <div className="space-left" />
           {!showListView && (
             <Fade in={!showListView} timeout={500}>
-              <SaleCardContainer sales={[1, 2, 3, 4, 5]} key="NormalView">
+              <SaleCardContainer sales={saleList} key="NormalView">
                 <NormalSaleCard />
               </SaleCardContainer>
             </Fade>
           )}
           {showListView && (
             <Fade in={showListView} timeout={500}>
-              <SaleCardContainer
-                sales={[
-                  1,
-                  2,
-                  3,
-                  4,
-                  5,
-                  "sale",
-                  "cool",
-                  true,
-                  7,
-                  8,
-                  9,
-                  10,
-                  11,
-                  12,
-                  13,
-                  14,
-                ]}
-                key="ThinView"
-              >
+              <SaleCardContainer sales={saleList} key="ThinView">
                 <ThinSaleCard />
               </SaleCardContainer>
             </Fade>
