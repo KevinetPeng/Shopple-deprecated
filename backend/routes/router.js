@@ -9,6 +9,7 @@ router.get("/companies/:companyName/sales", Controller.getAllSales);
 
 router.get("/sales", Controller.saleListAll);
 router.post("/companies/:companyName/sales", Controller.saleCreate);
+router.delete("/companies/:companyName/sales/:saleID", Controller.saleDelete);
 
 module.exports = router;
 // //If GET request on .../sales/, then respond with sales in JSON format
