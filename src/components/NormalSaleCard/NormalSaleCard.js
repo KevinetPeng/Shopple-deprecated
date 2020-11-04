@@ -32,6 +32,8 @@ const useStyles = makeStyles({
   },
 });
 
+/* Component for a normal sized sale card */
+
 function NormalSaleCard(props) {
   const classes = useStyles();
   return (

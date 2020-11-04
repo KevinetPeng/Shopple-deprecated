@@ -41,6 +41,8 @@ const useStyles = makeStyles({
   },
 });
 
+/* Component for a thin sale card */
+
 function ThinSaleCard(props) {
   const classes = useStyles();
   return (

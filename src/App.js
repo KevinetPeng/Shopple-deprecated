@@ -10,6 +10,10 @@ import NormalSaleCard from "./components/NormalSaleCard/NormalSaleCard";
 import ThinSaleCard from "./components/ThinSaleCard/ThinSaleCard";
 import Axios from "axios";
 
+
+
+/* Main component that renders the app */
+
 function App(props) {
   const [showListView, setShowListView] = React.useState(true);
   const [saleList, setSaleList] = React.useState([]);
