@@ -16,6 +16,8 @@ const styles = (theme) => ({
   },
 });
 
+/* Component for toggling between thin card view and normal view*/
+
 class ToggleView extends React.Component {
   constructor(props) {
     super(props);

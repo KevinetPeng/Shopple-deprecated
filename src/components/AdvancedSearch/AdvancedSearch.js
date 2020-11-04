@@ -72,6 +72,8 @@ const useStyles = makeStyles({
   },
 });
 
+/* Component for advance search */
+
 function AdvancedSearch(props) {
   const classes = useStyles();
 

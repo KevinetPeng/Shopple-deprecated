@@ -12,6 +12,8 @@ const useStyles = makeStyles({
   },
 });
 
+/* Scrollable container used to contain normal sale cards and thin sale cards */
+
 function SaleCardContainer(props) {
   const classes = useStyles();
   const sales = props.sales;
