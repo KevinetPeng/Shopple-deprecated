@@ -36,6 +36,18 @@ function AddSale(props) {
   //expected state is a boolean
   const [dialogState, setDialogState] = React.useState(false);
 
+  //useState hook for the company name state
+  //expected state is a string
+  const [companyNameState, setCompanyNameState] = React.useState("");
+
+  //useState hook for the sale description state
+  //expected state is a string
+  const [saleDescriptionState, setSaleDescriptionState] = React.useState("");
+
+  //useState hook for the sale description state
+  //expected state is an int
+  const [saleAmountState, setSaleAmountState] = React.useState(0);
+
   //handle FAB click to open dialog
   const handleClick = () => {
     setDialogState(true);
@@ -49,7 +61,9 @@ function AddSale(props) {
   //handle sale data entry
   const handleEnterSale = () => {
     // this is the endpoint to enter the sale data
-    setDialogState(false);
+
+
+    handleDialogClose();
   };
 
   return (

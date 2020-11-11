@@ -21,13 +21,14 @@ function App(props) {
   React.useEffect(() => {
     Axios.get(`http://localhost:4000/sales`).then((response) => {
       setSaleList(response.data);
-      console.log(saleList);
     });
-  });
+  }, []);
 
   const toggleViewCallback = (childListViewState) => {
     setShowListView(childListViewState);
   };
+
+  console.log(saleList);
 
   return (
     <>
