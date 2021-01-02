@@ -21,9 +21,8 @@ function SaleCardContainer(props) {
     <React.Fragment key={sale._id}>
       {React.cloneElement(props.children, {
         companyName: sale.company,
-        saleDescript:
-          "Support your community and broaden your horizons by trying different restaurants in your neighbourhood. Get inspired by the cuisines highlighted below, and experience flavours from around the world in the comfort of your home* with a $0 Delivery Fee on orders of $20 or more.",
-        saleAmount: `${sale.amount} Off`,
+        saleDescript: sale.description,
+        saleAmount: sale.amount,
       })}
     </React.Fragment>
   ));
