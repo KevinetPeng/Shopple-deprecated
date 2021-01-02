@@ -7,6 +7,7 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 const useStyles = makeStyles({
   root: {
     marginBottom: 12,
+    marginRight: 12,
     width: 790,
     height: 140,
     borderRadius: 4,
@@ -22,13 +23,21 @@ const useStyles = makeStyles({
       border: "1px solid #b8b8b8",
     },
     cursor: "pointer",
+    position: "relative",
   },
   companyPic: {
     width: 270,
-    marginRight: 30,
+    marginRight: 10,
+    backgroundRepeat: "none",
+    backgroundSize: "contain"
   },
   companyName: {
     color: "#444444",
+  },
+  saleAmount: {
+    fontSize: 22,
+    position: "absolute",
+    bottom: 4
   },
 });
 
@@ -40,8 +49,8 @@ function NormalSaleCard(props) {
     <Card className={classes.root}>
       <CardMedia
         className={classes.companyPic}
-        image="https://www.hm.com/entrance/assets/bundle/img/HM-Share-Image.jpg"
-        title="H&M"
+        image={process.env.REACT_APP_BACKEND_URL + "/logos/" + props.companyName + ".svg"}
+        title={props.companyName}
       />
       <div>
         <Typography
@@ -61,8 +70,8 @@ function NormalSaleCard(props) {
         >
           {props.saleDescript}
         </Typography>
-        <Typography variant="body2" color="Secondary" align="left" gutterBottom>
-          {props.saleAmount}
+        <Typography variant="body2" color="Secondary" align="left" className={classes.saleAmount} gutterBottom>
+          UP TO {props.saleAmount}% OFF
         </Typography>
       </div>
     </Card>

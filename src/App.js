@@ -18,17 +18,20 @@ function App(props) {
   const [showListView, setShowListView] = React.useState(true);
   const [saleList, setSaleList] = React.useState([]);
 
+  //useEffect to make get request to backend to retreive list of sales objects
   React.useEffect(() => {
-    Axios.get(`http://localhost:4000/sales`).then((response) => {
+    Axios.get(process.env.REACT_APP_BACKEND_URL + "/sales").then((response) => {
       setSaleList(response.data);
     });
   }, []);
 
+  //print sale list
+  console.log(saleList);
+
+  //toggle list view callback function
   const toggleViewCallback = (childListViewState) => {
     setShowListView(childListViewState);
   };
-
-  console.log(saleList);
 
   return (
     <>

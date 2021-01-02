@@ -20,16 +20,23 @@ const useStyles = makeStyles({
       border: "1px solid #b8b8b8",
     },
     cursor: "pointer",
+    alignItems: "center",
   },
   companyPic: {
-    width: 200,
+    width: 150,
+    height: "100%",
     marginRight: 0,
+    backgroundRepeat: "none",
+    backgroundSize: "contain"
   },
   saleDescript: {
     display: "block",
   },
   saleAmount: {
-    marginLeft: 8,
+    marginLeft: "auto",
+    marginRight: 8,
+    fontSize: 18,
+    marginBottom: 0,
   },
   companyName: {
     justifySelf: "left",
@@ -44,13 +51,14 @@ const useStyles = makeStyles({
 /* Component for a thin sale card */
 
 function ThinSaleCard(props) {
+  console.log("thin sale card" + props.saleAmount)
   const classes = useStyles();
   return (
     <Card className={classes.root}>
       <CardMedia
         className={classes.companyPic}
-        image="https://www.hm.com/entrance/assets/bundle/img/HM-Share-Image.jpg"
-        title="H&M"
+        image={process.env.REACT_APP_BACKEND_URL + "/logos/" + props.companyName + ".svg"}
+        title={props.companyName}
       />
       <div className={classes.mainText}>
         <Typography
@@ -77,7 +85,7 @@ function ThinSaleCard(props) {
         align="left"
         gutterBottom
       >
-        {props.saleAmount}
+        UP TO {props.saleAmount}% OFF
       </Typography>
     </Card>
   );
