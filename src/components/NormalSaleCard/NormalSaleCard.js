@@ -26,10 +26,11 @@ const useStyles = makeStyles({
     position: "relative",
   },
   companyPic: {
-    width: 270,
+    width: 230,
     marginRight: 10,
     backgroundRepeat: "none",
-    backgroundSize: "contain"
+    backgroundSize: "contain",
+    flexShrink: 0,
   },
   companyName: {
     color: "#444444",
@@ -60,7 +61,7 @@ function NormalSaleCard(props) {
           align="left"
           gutterBottom
         >
-          {props.companyName}
+          {props.companyName.replaceAll('_', ' ')}
         </Typography>
         <Typography
           variant="body2"
@@ -71,7 +72,7 @@ function NormalSaleCard(props) {
           {props.saleDescript}
         </Typography>
         <Typography variant="body2" color="Secondary" align="left" className={classes.saleAmount} gutterBottom>
-          UP TO {props.saleAmount}% OFF
+          Up to {props.saleAmount}% off
         </Typography>
       </div>
     </Card>
