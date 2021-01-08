@@ -83,10 +83,10 @@ function AdvancedSearch(props) {
     "Adidas",
     "Aritzia",
     "Banana Republic",
-    "Frank and Oak",
     "Gap",
     "H&M",
     "Hollister",
+    "Nike",
   ];
 
   //using the array of supported companies, create the state object to pass to React.useState(...);

@@ -66,7 +66,7 @@ function ThinSaleCard(props) {
           align="left"
           className={classes.companyName}
         >
-          {props.companyName}
+          {props.companyName.replaceAll('_', ' ')}
         </Typography>
         <Typography
           className={classes.saleDescript}
@@ -85,7 +85,7 @@ function ThinSaleCard(props) {
         align="left"
         gutterBottom
       >
-        UP TO {props.saleAmount}% OFF
+        Up to {props.saleAmount}% off
       </Typography>
     </Card>
   );
