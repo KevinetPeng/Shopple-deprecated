@@ -85,7 +85,7 @@ function AddSale(props) {
 
   //handle sale data entry
   const handleEnterSale = () => {
-    Axios.post(process.env.REACT_APP_BACKEND_URL + "/companies/" + companyNameState + "/sales", {
+    Axios.post(process.env.REACT_APP_BACKEND_URL + "/companies/" + companyNameState.replaceAll(' ', '_') + "/sales", {
       amount: parseInt(saleAmountState),
       description: saleDescriptionState
     })
