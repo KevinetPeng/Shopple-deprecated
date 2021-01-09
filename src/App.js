@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import AppBar from "./components/AppBar/AppBar";
+import CustomAppBar from "./components/AppBar/AppBar";
 import SaleCardContainer from "./components/SaleCardContainer/SaleCardContainer";
 import AdvancedSearch from "./components/AdvancedSearch/AdvancedSearch";
 import AddSale from "./components/AddSale/AddSale";
@@ -40,7 +40,7 @@ function App(props) {
 
   return (
     <>
-      <AppBar />
+      <CustomAppBar />
       <div className="app-parent">
         <div className="app">
           <AdvancedSearch />
