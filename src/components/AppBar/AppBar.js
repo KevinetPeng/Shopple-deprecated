@@ -94,7 +94,7 @@ export default function CustomAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-          <img className={classes.title} src={logo} />
+          <img className={classes.title} src={logo} alt="Shopple" />
 
           <div className={classes.search}>
             <InputBase

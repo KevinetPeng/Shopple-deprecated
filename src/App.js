@@ -18,6 +18,7 @@ function App(props) {
   const [showListView, setShowListView] = React.useState(true);
   const [saleList, setSaleList] = React.useState([]);
   const [update, updateState] = React.useState(0);
+  const [search, setSearch] = React.useState("");
   const [inputList, setInputList] = React.useState([]);
 
   //useEffect to make get request to backend to retreive list of sales objects
@@ -44,6 +45,8 @@ function App(props) {
   //update input sale list based on search substring (callback for AppBar.js)
   const updateSaleList = (substring) => {
     //console.log(substring);
+    setSearch(substring);
+
     let tempSaleList = [];
 
     for (let sale of saleList) {
@@ -64,14 +67,14 @@ function App(props) {
           <div className="space-left" />
           {!showListView && (
             <Fade in={!showListView} timeout={500}>
-              <SaleCardContainer sales={inputList} key="NormalView">
+              <SaleCardContainer sales={inputList} key="NormalView" search={search}>
                 <NormalSaleCard />
               </SaleCardContainer>
             </Fade>
           )}
           {showListView && (
             <Fade in={showListView} timeout={500}>
-              <SaleCardContainer sales={inputList} key="ThinView">
+              <SaleCardContainer sales={inputList} key="ThinView" search={search}>
                 <ThinSaleCard />
               </SaleCardContainer>
             </Fade>

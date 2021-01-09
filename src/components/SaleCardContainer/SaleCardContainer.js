@@ -1,4 +1,6 @@
 import React from "react";
+import Card from "@material-ui/core/Card";
+import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
 const useStyles = makeStyles({
@@ -10,7 +12,35 @@ const useStyles = makeStyles({
     overflowX: "hidden",
     paddingRight: 16,
   },
+
+  noSalesCard: {
+    marginBottom: 12,
+    marginRight: 12,
+    width: 790,
+    height: "auto",
+    borderRadius: 4,
+    border: "1px solid #DDE3E6",
+    boxShadow: "1px 1px 2px  rgba(150, 150, 250, 0.15)",
+    padding: 32,
+    paddingTop: 16,
+    paddingBottom: 8,
+    display: "flex",
+    flexDirection: "column",
+    "&:hover": {
+      boxShadow: "1px 1px 2px  rgba(150, 150, 250, 0.35)",
+      border: "1px solid #b8b8b8",
+    },
+    cursor: "pointer",
+    position: "relative",
+  },
+
+  align_left: {
+    textAlign: "left",
+    marginLeft: 18,
+    marginTop: 8,
+  },
 });
+
 
 /* Scrollable container used to contain normal sale cards and thin sale cards */
 
@@ -29,6 +59,21 @@ function SaleCardContainer(props) {
   return (
     <ul {...props} className={classes.root}>
       {listItems}
+      {(sales.length === 0) && (<Card className={classes.noSalesCard}>
+        <Typography className={classes.align_left}>
+          Your search of "{props.search}" did not match any sales we have catalogued.
+        </Typography>
+        <Typography className={classes.align_left}>
+          Suggestions:
+        </Typography>
+        <Typography className={classes.align_left}>
+          <ul>
+            <li>Make sure that all words are spelled correctly.</li>
+            <li>Try different keywords.</li>
+            <li>Try fewer keywords.</li>
+          </ul>
+        </Typography>
+      </Card>)}
     </ul>
   );
 }
