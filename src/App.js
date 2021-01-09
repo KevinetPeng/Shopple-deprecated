@@ -17,13 +17,14 @@ import Axios from "axios";
 function App(props) {
   const [showListView, setShowListView] = React.useState(true);
   const [saleList, setSaleList] = React.useState([]);
+  const [update, updateState] = React.useState(0);
 
   //useEffect to make get request to backend to retreive list of sales objects
   React.useEffect(() => {
     Axios.get(process.env.REACT_APP_BACKEND_URL + "/sales").then((response) => {
       setSaleList(response.data);
     });
-  }, []);
+  }, [update]);
 
   //print sale list
   console.log(saleList);
@@ -32,6 +33,10 @@ function App(props) {
   const toggleViewCallback = (childListViewState) => {
     setShowListView(childListViewState);
   };
+
+  const updateFunction = () => {
+    updateState((x) => x + 1);
+  }
 
   return (
     <>
@@ -58,7 +63,7 @@ function App(props) {
           <ToggleView parentCallback={toggleViewCallback} />
           <div className="space-right" />
         </div>
-        <AddSale />
+        <AddSale updateFunction={updateFunction} />
       </div>
     </>
   );
