@@ -8,7 +8,6 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,14 +60,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-/* Componenent for main App Bar */
+/* Component for main App Bar */
 
-export default function SearchAppBar() {
+export default function CustomAppBar() {
   const classes = useStyles();
 
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const [search, setSearch] = React.useState("");
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -86,6 +86,10 @@ export default function SearchAppBar() {
     setAnchorEl(null);
   };
 
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  }
+
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
@@ -101,6 +105,7 @@ export default function SearchAppBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
+              onChange={handleSearch}
             />
           </div>
           {auth && (
