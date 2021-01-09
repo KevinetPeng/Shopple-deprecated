@@ -18,6 +18,7 @@ function App(props) {
   const [showListView, setShowListView] = React.useState(true);
   const [saleList, setSaleList] = React.useState([]);
   const [update, updateState] = React.useState(0);
+  const [inputList, setInputList] = React.useState([]);
 
   //useEffect to make get request to backend to retreive list of sales objects
   React.useEffect(() => {
@@ -26,35 +27,51 @@ function App(props) {
     });
   }, [update]);
 
-  //print sale list
-  console.log(saleList);
+  React.useEffect(() => {
+    setInputList(saleList);
+  }, [saleList]);
 
   //toggle list view callback function
   const toggleViewCallback = (childListViewState) => {
     setShowListView(childListViewState);
   };
 
+  //Refresh App component
   const updateFunction = () => {
     updateState((x) => x + 1);
   }
 
+  //update input sale list based on search substring (callback for AppBar.js)
+  const updateSaleList = (substring) => {
+    //console.log(substring);
+    let tempSaleList = [];
+
+    for (let sale of saleList) {
+      if (sale.company.toLowerCase().includes(substring.toLowerCase()) || sale.description.toLowerCase().includes(substring.toLowerCase())) {
+        tempSaleList.push(sale);
+      }
+    }
+    console.log(tempSaleList);
+    setInputList(tempSaleList);
+  }
+
   return (
     <>
-      <CustomAppBar />
+      <CustomAppBar searchSales={updateSaleList} />
       <div className="app-parent">
         <div className="app">
           <AdvancedSearch />
           <div className="space-left" />
           {!showListView && (
             <Fade in={!showListView} timeout={500}>
-              <SaleCardContainer sales={saleList} key="NormalView">
+              <SaleCardContainer sales={inputList} key="NormalView">
                 <NormalSaleCard />
               </SaleCardContainer>
             </Fade>
           )}
           {showListView && (
             <Fade in={showListView} timeout={500}>
-              <SaleCardContainer sales={saleList} key="ThinView">
+              <SaleCardContainer sales={inputList} key="ThinView">
                 <ThinSaleCard />
               </SaleCardContainer>
             </Fade>
