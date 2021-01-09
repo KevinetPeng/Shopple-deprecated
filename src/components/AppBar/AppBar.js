@@ -8,6 +8,7 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+import logo from "../../images/shopple_icon.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginRight: "auto",
     display: "block",
-    color: "#111111",
+    height: "30px",
+    width: "auto",
   },
   search: {
     position: "relative",
@@ -88,15 +90,14 @@ export default function CustomAppBar() {
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
-  }
+  };
 
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Shopple
-          </Typography>
+          <img className={classes.title} src={logo} />
+
           <div className={classes.search}>
             <InputBase
               placeholder="Search"
