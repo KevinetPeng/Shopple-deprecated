@@ -51,7 +51,6 @@ const useStyles = makeStyles({
 /* Component for a thin sale card */
 
 function ThinSaleCard(props) {
-  console.log("thin sale card" + props.saleAmount)
   const classes = useStyles();
   return (
     <Card className={classes.root}>
