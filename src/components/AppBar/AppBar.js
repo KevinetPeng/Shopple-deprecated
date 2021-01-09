@@ -2,7 +2,6 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -64,13 +63,12 @@ const useStyles = makeStyles((theme) => ({
 
 /* Component for main App Bar */
 
-export default function CustomAppBar() {
+export default function CustomAppBar(props) {
   const classes = useStyles();
 
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const [search, setSearch] = React.useState("");
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -89,7 +87,7 @@ export default function CustomAppBar() {
   };
 
   const handleSearch = (e) => {
-    setSearch(e.target.value);
+    props.searchSales(e.target.value);
   };
 
   return (
