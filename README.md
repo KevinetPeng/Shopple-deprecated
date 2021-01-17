@@ -1,6 +1,6 @@
 # Shopple 
 
-## NOTE: Shoople has been moved to https://github.com/jayhomn/shopple-backend for deployment. Future development will only exist on that repo.
+## NOTE: Shopple has been moved to https://github.com/jayhomn/shopple-backend for deployment. Future development will only exist on that repo.
 
 Shopple is a web application that catalogues sale data from various companies and brands.
 
